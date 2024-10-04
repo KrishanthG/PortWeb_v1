@@ -1,0 +1,399 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1c1c1c; /* Dark mode background */
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Space between brand and menu */
+    align-items: center; /* Align items vertically */
+    padding: 1rem; /* Padding for the navbar */
+    background-color: #141414; /* Dark background */
+}
+
+.navbar-brand {
+    color: #fff; /* Brand color */
+    font-size: 1.5rem; /* Brand font size */
+}
+
+/* Navbar Menu Styles */
+.navbar-menu {
+    list-style-type: none; /* Remove bullets */
+    display: flex; /* Flexbox layout for horizontal menu */
+    justify-content: center; /* Center the items */
+}
+
+.navbar-menu li {
+    margin: 0 20px; /* Space between items */
+}
+
+.navbar-menu a {
+    color: #fff; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 1rem; /* Link font size */
+    transition: color 0.3s; /* Transition for hover effect */
+}
+
+.navbar-menu a:hover {
+    color: #1abc9c; /* Change color on hover */
+}
+
+/* Mobile Styles */
+.navbar-toggle {
+    display: none; /* Hide toggle by default */
+    flex-direction: column; /* Stack bars vertically */
+    cursor: pointer; /* Pointer cursor */
+}
+
+.bar {
+    height: 3px; /* Height of bars */
+    width: 25px; /* Width of bars */
+    background-color: #fff; /* Color of bars */
+    margin: 4px 0; /* Space between bars */
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none; /* Hide menu by default */
+        flex-direction: column; /* Stack items vertically */
+        position: absolute; /* Absolute positioning */
+        top: 60px; /* Position below the navbar */
+        left: 0; /* Align to the left */
+        background-color: #141414; /* Dark background for dropdown */
+        width: 100%; /* Full width */
+        z-index: 1; /* Stack above other elements */
+    }
+
+    .navbar-menu.active {
+        display: flex; /* Show menu when active */
+    }
+
+    .navbar-toggle {
+        display: flex; /* Show toggle icon */
+    }
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+.hero-content {
+    text-align: center;
+}
+
+h1 {
+    font-size: 4rem;
+    animation: fadeIn 2s ease-in-out;
+    background: -webkit-linear-gradient(90deg, #1abc9c, #3498db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.explore-btn {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #3498db;
+    border: none;
+    color: #fff;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.explore-btn:hover {
+    background-color: #1abc9c;
+    box-shadow: 0px 0px 20px 5px rgba(52, 152, 219, 0.7);
+}
+
+/* About Section */
+/* About Section */
+.about-section {
+    padding: 4rem 2rem;
+    background-color: #222;
+    text-align: center; /* Centering the text */
+}
+
+.about-section h2 {
+    margin-bottom: 2rem; /* Spacing below the title */
+    color: #1abc9c; /* Title color */
+}
+
+.about-content {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row; /* Align items in a row */
+    justify-content: center; /* Center items */
+    align-items: center; /* Align items vertically */
+    gap: 2rem; /* Space between image and text */
+    max-width: 1200px; /* Maximum width for larger screens */
+    margin: 0 auto; /* Center align the content */
+}
+
+.about-photo {
+    width: 150px; /* Set a width for the photo */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Circular image */
+    border: 3px solid #1abc9c; /* Border around the photo */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
+
+.about-text {
+    max-width: 600px; /* Limit text width */
+    color: #ffffff; /* Text color */
+}
+
+.skills-list {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+}
+
+.skills-list li {
+    background: #1abc9c; /* Background color for skills */
+    color: #222; /* Text color for skills */
+    padding: 0.5rem 1rem; /* Padding for skills */
+    border-radius: 5px; /* Rounded corners */
+    margin: 0.25rem 0; /* Spacing between skills */
+}
+
+
+/* Project Carousel */
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 2rem;
+}
+
+.project-carousel {
+    display: flex;
+    overflow-x: auto; /* Allows horizontal scrolling */
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+.project-card {
+    flex: none;
+    width: 300px;
+    margin: 0 15px;
+    background-color: #282828;
+    border-radius: 10px;
+    text-align: center;
+    padding: 1rem;
+    scroll-snap-align: center;
+    position: relative; /* For gradient overlay */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 30px 8px rgba(46, 204, 113, 0.7);
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Arrows for navigation */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev-btn {
+    left: 0;
+}
+
+.next-btn {
+    right: 0;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Gradient overlay on project cards */
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.8) 100%);
+    z-index: 1;
+    transition: background 0.5s ease;
+}
+
+.project-card:hover::before {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.9) 100%);
+}
+
+/* Text over the image */
+.project-card h3, .project-card p {
+    position: relative;
+    z-index: 2; /* Ensures the text appears above the gradient */
+    color: #ffffff;
+}
+
+/* Education and Certificates Sections */
+/* Education Section */
+.education-section {
+    padding: 4rem 2rem;
+    background-color: #222;
+}
+
+.education-card {
+    background-color: #282828;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex; /* Flexbox for image and text */
+    align-items: center; /* Align items vertically */
+}
+
+.institution-image {
+    width: 100px; /* Set a width for consistency */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Slightly round the corners */
+    margin-right: 20px; /* Space between image and text */
+}
+
+/* Ensure that text aligns nicely with images */
+.education-card h3 {
+    margin: 0; /* Remove margin for a cleaner look */
+    color: #ffffff;
+}
+
+.education-card p {
+    margin: 20px; /* Remove margin for a cleaner look */
+    color: #b2bec3; /* Light grey for description */
+}
+
+/* Certificates Section */
+.certificates-section {
+    padding: 4rem 2rem;
+    background-color: #222;
+    text-align: center; /* Center text */
+}
+
+.certificates-section h2 {
+    margin-bottom: 2rem; /* Spacing below the title */
+}
+
+/* Container for certificate cards */
+.certificates-container {
+    display: grid; /* Use grid for layout */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive layout */
+    gap: 1.5rem; /* Space between cards */
+    justify-items: center; /* Center items in grid */
+}
+
+/* Individual Certificate Card */
+.certificate-card {
+    background-color: #282828;
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 300px; /* Limit card width */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition effects */
+    position: relative;
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0px 0px 15px rgba(46, 204, 113, 0.7); /* Glow effect */
+}
+
+.certificate-card h3 {
+    margin: 0 0 0.5rem; /* Spacing for the title */
+    color: #1abc9c; /* Bright title color */
+}
+
+.certificate-card p {
+    margin: 0; /* Remove default margin */
+    color: #b2bec3; /* Light gray for description */
+}
+
+/* Certificate Image Styling */
+.certificate-image {
+    width: 100%; /* Responsive width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners */
+    margin-bottom: 0.5rem; /* Space below the image */
+}
+
+/* Existing styles remain unchanged... */
+
+
+/* Contact Section */
+.contact-section {
+    padding: 4rem 2rem;
+    background-color: #222;
+    text-align: center; /* Centering text */
+}
+
+.contact-section h2 {
+    margin-bottom: 2rem; /* Space below the title */
+    color: #1abc9c; /* Title color */
+}
+
+.contact-details {
+    margin-bottom: 2rem; /* Space between details */
+}
+
+.contact-details p {
+    margin: 0.5rem 0; /* Space between paragraphs */
+    color: #b2bec3; /* Light gray for text */
+}
+
+.contact-details a {
+    color: #1abc9c; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.contact-details a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+
+/* Key Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
